@@ -11,7 +11,6 @@ public class PlayerInteractSystem : MonoBehaviour
 
     [SerializeField] private RaycastHit2D hit;
 
-    // Dipanggil dari script movement kamu
     public void SetDirection(Vector2 dir)
     {
         if (dir != Vector2.zero)
