@@ -6,11 +6,16 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
     [Header("Main Menu")]
-    [SerializeField] private GameObject tutorial;
+    [SerializeField] private TutorialSO tutorialData;
+    [SerializeField] private GameObject tutorialPanel;
+
 
     [Header("In Game")]
     [SerializeField] private GameObject kamusPanel;
@@ -26,7 +31,17 @@ public class UIManager : MonoBehaviour
 
     public void ClickTutorial()
     {
-        tutorial.SetActive(!tutorial.activeSelf);
+        if(TutorialManager.instance != null)
+        {
+            if (tutorialPanel.activeSelf)
+            {
+                TutorialManager.instance.CloseTutorial();
+            }
+            else
+            {
+                TutorialManager.instance.SetUpTutorialData(tutorialData);
+            }
+        }
     }
     public void DeadPanelOpen()
     {

@@ -1,10 +1,10 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
-
     public static Player instance;
 
     private void Awake()
@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerInteractSystem interactSystem;
 
     private Animator animator;
+
+    [Header("Effect Feedback")]
+    [SerializeField] private CinemachineImpulseSource impulseSource;
 
     void Start()
     {
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour
         if (onDeath) return;
         health -= damage;
         SoundManager.instance.PlaySFX(SoundManager.instance.damage);
+        impulseSource.GenerateImpulse();
         if (health <= 0)
         {
             Death();
