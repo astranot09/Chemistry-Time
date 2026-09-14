@@ -12,6 +12,10 @@ public class PlantScript : MonoBehaviour, IInteractable
     private SpriteRenderer spriteRenderer;
     //private Animator animator;
 
+    [Header("SFX")]
+    [SerializeField] private GameObject particleParent;
+    private int childParticleCount;
+
     [Header("Monologue")]
     [SerializeField] private MonologueSO monologueSO;
 
@@ -19,6 +23,7 @@ public class PlantScript : MonoBehaviour, IInteractable
     {
         currTime = progressTime;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //childParticleCount = particleParent.childCount;
         //ResetTime();
     }
 
@@ -34,6 +39,7 @@ public class PlantScript : MonoBehaviour, IInteractable
                 spriteRenderer.color = Color.green;
                 currTime = progressTime;
                 MonologueManager.instance.PlayMonologue(monologueSO);
+                ReadAllParticleSystem(isReady);
             }
             //UpdateProgressBar();
         }
@@ -49,6 +55,7 @@ public class PlantScript : MonoBehaviour, IInteractable
         currTime = 0;
         isReady = false;
         spriteRenderer.color = Color.red;
+        ReadAllParticleSystem(isReady);
     }
 
     //private void UpdateProgressBar()
@@ -65,4 +72,26 @@ public class PlantScript : MonoBehaviour, IInteractable
         PlayerInventory.instance.AddPlant(3);
         ResetTime();
     }
+
+    private void ReadAllParticleSystem(bool x)
+    {
+        //for(int i = childParticleCount-1; i >= 0; i--)
+        //{
+            if (!x)
+            {
+                particleParent.SetActive(false);
+                //particleParent.GetComponent<ParticleSystem>().Stop();
+                //particleParent.GetChild(i).GetComponent<ParticleSystem>().Stop();
+            }
+
+            else
+            {
+                particleParent.SetActive(true);
+                //particleParent.GetComponent<ParticleSystem>().Play();
+                //particleParent.GetChild(i).GetComponent<ParticleSystem>().Play();
+            }
+                
+        //}
+    }
+
 }

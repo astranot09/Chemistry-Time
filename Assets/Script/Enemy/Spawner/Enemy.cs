@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Death()
+    public void Death()
     {
         onDead = true;
         Debug.Log("Death");

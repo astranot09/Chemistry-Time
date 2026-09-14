@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 0
-  scaleValue: 1.2
+  targetScale: 1.2
   durationValue: 0.2
 --- !u!1 &66328056
 GameObject:
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 0
-  scaleValue: 1.2
+  targetScale: 1.2
   durationValue: 0.2
 --- !u!1 &161624979
 GameObject:
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 0
-  scaleValue: 1.2
+  targetScale: 1.2
   durationValue: 0.2
 --- !u!1 &296535032
 GameObject:
@@ -2160,7 +2160,7 @@ GameObject:
   - component: {fileID: 1033161900}
   - component: {fileID: 1033161899}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7129,7 +7129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 0
-  scaleValue: 1.2
+  targetScale: 1.2
   durationValue: 0.2
 --- !u!1 &1144450404
 GameObject:
@@ -7345,7 +7345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 1
-  scaleValue: 1.1
+  targetScale: 1.2
   durationValue: 2
 --- !u!1 &1363904725
 GameObject:
@@ -8037,7 +8037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeAnimation: 1
   playOnLooping: 0
-  scaleValue: 1.2
+  targetScale: 1.2
   durationValue: 0.2
 --- !u!1 &1913546304
 GameObject:
