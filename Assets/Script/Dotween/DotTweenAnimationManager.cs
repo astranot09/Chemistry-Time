@@ -16,12 +16,14 @@ public class DotTweenAnimationManager : MonoBehaviour, IPointerEnterHandler, IPo
     [SerializeField] private bool playOnLooping;
 
     [Header("Setting")]
-    [SerializeField] private float scaleValue = 1.2f;
+    [SerializeField] private float targetScale = 1.2f;
     [SerializeField] private float durationValue = 0.2f;
-
+    private Vector3 scaleStart;
 
     private void Start()
     {
+        scaleStart = transform.localScale;
+
         if (playOnLooping)
         {
             PlayAnimationLooping();
@@ -50,7 +52,7 @@ public class DotTweenAnimationManager : MonoBehaviour, IPointerEnterHandler, IPo
             switch (typeAnimation)
             {
                 case TypeAnimation.Scaling:
-                    this.transform.DOScale(scaleValue, durationValue);
+                    this.transform.DOScale(targetScale * scaleStart, durationValue);
                     break;
             }
         }
@@ -59,7 +61,7 @@ public class DotTweenAnimationManager : MonoBehaviour, IPointerEnterHandler, IPo
             switch (typeAnimation)
             {
                 case TypeAnimation.Scaling:
-                    this.transform.DOScale(1, durationValue);
+                    this.transform.DOScale(scaleStart, durationValue);
                     break;
             }
         }
@@ -70,11 +72,12 @@ public class DotTweenAnimationManager : MonoBehaviour, IPointerEnterHandler, IPo
         {
             case TypeAnimation.Scaling:
                 Sequence s = DOTween.Sequence();
-                s.Append(transform.DOScale(scaleValue, durationValue))
-                 .Append(transform.DOScale(1f, durationValue))
+                s.Append(transform.DOScale(targetScale * scaleStart, durationValue))
+                 .Append(transform.DOScale(scaleStart, durationValue))
                  .SetLoops(-1, LoopType.Yoyo) // -1 artinya loop tanpa batas
                  .SetUpdate(true);
                 break;
         }
     }
+
 }

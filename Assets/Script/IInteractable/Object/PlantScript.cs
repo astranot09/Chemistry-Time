@@ -12,6 +12,9 @@ public class PlantScript : MonoBehaviour, IInteractable
     private SpriteRenderer spriteRenderer;
     //private Animator animator;
 
+    [Header("Monologue")]
+    [SerializeField] private MonologueSO monologueSO;
+
     private void Start()
     {
         currTime = progressTime;
@@ -30,6 +33,7 @@ public class PlantScript : MonoBehaviour, IInteractable
                 isReady = true;
                 spriteRenderer.color = Color.green;
                 currTime = progressTime;
+                MonologueManager.instance.PlayMonologue(monologueSO);
             }
             //UpdateProgressBar();
         }

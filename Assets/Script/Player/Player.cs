@@ -25,7 +25,10 @@ public class Player : MonoBehaviour
     public Vector2 lastDir = Vector2.right;
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+    //[SerializeField] private SpriteRenderer spriteRenderer;
+    [Header("Sprite")]
+    [SerializeField] private Transform playerSprite;
+    private bool alreadyRotate;
 
     private bool onDeath = false;
 
@@ -40,29 +43,44 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         interactSystem = GetComponent<PlayerInteractSystem>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //if(spriteRenderer == null )
+        //    spriteRenderer = GetComponent<SpriteRenderer>();
+
         animator = GetComponent<Animator>();
     }
 
-    public void OnMove(InputAction.CallbackContext ctx)
-    {
-        dir = ctx.ReadValue<Vector2>();
-        if (ctx.performed)
-        {
-            lastDir = dir;
-            interactSystem.SetDirection(lastDir);
-        }
+    //public void OnMove(InputAction.CallbackContext ctx)
+    //{
+    //    dir = ctx.ReadValue<Vector2>();
+    //    if (ctx.performed)
+    //    {
+    //        lastDir = dir;
+    //        interactSystem.SetDirection(lastDir);
+    //    }
             
+    //}
+
+    public void SetDirectionPlayer(Vector2 dir, Vector2 lastDir)
+    {
+        this.dir = dir;
+        this.lastDir = lastDir;
     }
 
     void Update()
     {
         animator.SetFloat("velocity",rb.linearVelocity.magnitude);
         rb.linearVelocity = dir * moveSpeed;
-        if (lastDir.x < 0)
-            spriteRenderer.flipX = true;
-        if (lastDir.x >= 0)
-            spriteRenderer.flipX = false;
+        if (lastDir.x < 0 && !alreadyRotate)
+        {
+            alreadyRotate = true;
+            playerSprite.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (lastDir.x > 0 && alreadyRotate)
+        {
+            alreadyRotate = false;
+            playerSprite.localRotation = Quaternion.identity;
+        }
     }
 
     public void TakeDamage(int damage)

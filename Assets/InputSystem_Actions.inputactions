@@ -34,9 +34,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Skill",
+                    "name": "Skill 1",
                     "type": "Button",
                     "id": "a816f2b7-5f93-41db-a8e1-898e7ee80fe1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Skill 2",
+                    "type": "Button",
+                    "id": "fa65d345-303b-460b-a683-1e14fab5ff70",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -128,7 +137,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Skill",
+                    "action": "Skill 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd428bff-c90d-4674-a62d-ef31f55c573b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skill 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

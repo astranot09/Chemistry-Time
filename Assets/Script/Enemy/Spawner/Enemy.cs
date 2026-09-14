@@ -7,6 +7,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 3;
     [SerializeField] private JenisBullet jenisEnemy;
 
+    [Header("Feedback")]
+    [SerializeField] private float deathTimeScale = 0.05f;
+    [SerializeField] private float deathTimeFeedback = 0.05f;
+
+
     [SerializeField] private float moveSpeed = 3f;
 
     private Rigidbody2D rb;
@@ -67,8 +72,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator deathTime()
     {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSeconds(0.05f);
+        Time.timeScale = deathTimeScale;
+        yield return new WaitForSecondsRealtime(deathTimeFeedback);
         Time.timeScale = 1f;
     }
 
