@@ -13,10 +13,10 @@ public class InventoryUI : MonoBehaviour
     {
         var x = PlayerInventory.instance;
         inventoryUIText.text =
-    $"C = {x.C}\n" +
-    $"H = {x.H}\n" +
-    $"O = {x.O}\n" +
-    $"N = {x.N}\n" +
-    $"Plant = {x.tumbuhan}";
+        $"C = {x.C}\n" +
+        $"H = {x.H}\n" +
+        $"O = {x.O}\n" +
+        $"N = {x.N}\n" +
+        $"Plant = {x.tumbuhan}";
     }
 }

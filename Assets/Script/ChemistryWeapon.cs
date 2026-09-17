@@ -28,7 +28,7 @@ public class ChemistryWeapon : MonoBehaviour
     
     public void OnShoot(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.canceled)
         {
             Debug.Log("Tes");
             if (PlayerInventory.instance.BulletCost(jenisBulletSekarang))

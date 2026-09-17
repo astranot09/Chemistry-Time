@@ -44,22 +44,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         interactSystem = GetComponent<PlayerInteractSystem>();
 
-        //if(spriteRenderer == null )
-        //    spriteRenderer = GetComponent<SpriteRenderer>();
-
         animator = GetComponent<Animator>();
     }
-
-    //public void OnMove(InputAction.CallbackContext ctx)
-    //{
-    //    dir = ctx.ReadValue<Vector2>();
-    //    if (ctx.performed)
-    //    {
-    //        lastDir = dir;
-    //        interactSystem.SetDirection(lastDir);
-    //    }
-            
-    //}
 
     public void SetDirectionPlayer(Vector2 dir, Vector2 lastDir)
     {
