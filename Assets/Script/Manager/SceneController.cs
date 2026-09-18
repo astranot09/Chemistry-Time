@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
@@ -13,18 +14,26 @@ public class SceneController : MonoBehaviour
        // DontDestroyOnLoad(gameObject);
     }
 
+    [SerializeField] private Animator animator;
 
     public void MainMenuScene()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadScene(0));
     }
     public void GameScene()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadScene(1));
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator LoadScene(int idx)
+    {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(idx);
     }
 }
