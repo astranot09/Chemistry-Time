@@ -18,10 +18,10 @@ Game Engine = Unity 6000.0.60f1
 Press E to interact the crop. You will get 3 plant in inventory
 
 ### Extract
-Press E to interact the xxxx. You will extract 1 plant into 
+Press E to interact the Ekstraktor. You will extract 1 plant into C 45, H 45, O 6, N 4.
 
 ### Drink
-Press E to interact the crop. You will get 3 plant in inventory
+Press E to interact the Combiner. You will change H 2, O 1 into H20
 
 ### Attack
 Press the button to change the formula and Press space to summon fireball to attack the enemy. If the formula and the name is correct, the enemy will be died.
