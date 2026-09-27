@@ -7,6 +7,7 @@ This Game I made for Game Programming Assignment and I want to make Chemistry Ga
 Game Engine = Unity 6000.0.60f1
 
 ## My Contribution
+- Create Chemistry Weapon Logic
 - Create all the code for game systems and features
 - Animation Character, Animation UI
 - Create Game Logic
