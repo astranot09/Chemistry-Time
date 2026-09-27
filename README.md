@@ -11,6 +11,7 @@ Game Engine = Unity 6000.0.60f1
 - Create all the code for game systems and features
 - Animation Character, Animation UI
 - Create Game Logic
+- Create Tutorial Logic
 - etc
 
 ## Key Features
