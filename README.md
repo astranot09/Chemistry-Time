@@ -39,7 +39,7 @@ Press Q to summon Shield. And press F to summon Nuke.
 
 | Name | Scene | Responsibility |
 | :---: | :---: | :---: |
-| Scene Controller | All Scene | Scene transitions, loading screens, state resets. |
+| Scene Controller | All Scene | Scene transitions, load screens, exit game. |
 | Audio Manager | All Scene | Plays BGM/SFX globally via audio database. |
 | Best Score Manager | All Scene | Handles persistent high score tracking and reading/writing data to JSON. |
 | Tutorial Manager | Main Menu | Controls trigger sequences and UI overlays for game tutorials. |
