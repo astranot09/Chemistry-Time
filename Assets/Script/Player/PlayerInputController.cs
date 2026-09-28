@@ -20,7 +20,9 @@ public class PlayerInputController : MonoBehaviour
 
     [Header("Reference")]
     [SerializeField] private Player player;
+    [SerializeField] private ChemistryWeapon chemistryWeapon;
     [SerializeField] private WaveClearSkill clearSkill;
+    [SerializeField] private ShieldSkill shieldSkill;
     [SerializeField] private PlayerInteractSystem interactSystem;
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -41,5 +43,30 @@ public class PlayerInputController : MonoBehaviour
             clearSkill.SkillCast();
         }
     }
+    public void OnSkillShield(InputAction.CallbackContext ctx)
+    {
+        if (ctx.canceled)
+        {
+            shieldSkill.SkillActivated();
+        }
+    }
+    public void OnShoot(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            chemistryWeapon.OnHoldCharge();
+        }
 
+        if (ctx.canceled)
+        {
+            chemistryWeapon.OnChargeOff();
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started) return;
+
+        interactSystem.Interact();
+    }
 }

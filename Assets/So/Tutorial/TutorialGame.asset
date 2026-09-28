@@ -13,9 +13,43 @@ MonoBehaviour:
   m_Name: TutorialGame
   m_EditorClassIdentifier: 
   tutorials:
-  - tutorialImage: {fileID: 6234176133674011997, guid: b76d917b92b451840b7daeec9aaa39e4, type: 3}
-    tutorialName: How To Shoot
-    tutorialDescription: adadasdada
-  - tutorialImage: {fileID: -7162917852718888925, guid: d7469c58588447848a6dbe009ebad46f, type: 3}
-    tutorialName: How To Plant
-    tutorialDescription: adadddddddddddddddddddddd
+  - tutorialImage: {fileID: -8254932462476682504, guid: 80802cf9fa320fc419f77e97c1f72b20, type: 3}
+    tutorialName: Chemistry Time
+    tutorialDescription: Helooo.. Welcome to Chemistry Time, I will guide you how
+      to play this game
+  - tutorialImage: {fileID: 6575399595192530103, guid: a6444ee7ee461884a93df37de8c5e4e2, type: 3}
+    tutorialName: Inventory
+    tutorialDescription: You can see your inventory in here, like Carbon, Hydrogen,
+      Oxygen, Nitrogen and plant you have
+  - tutorialImage: {fileID: 6632562118931094677, guid: 066cb9ab298e7b04e8d78574a12a195d, type: 3}
+    tutorialName: Plant
+    tutorialDescription: You can get plant by Interact this object using E
+  - tutorialImage: {fileID: -4084257871133270774, guid: 6f949509e9cb15345a21b6bbacd068a6, type: 3}
+    tutorialName: Ekstraktor
+    tutorialDescription: You can change 1 plant into C 45, H 45, O 6, N 4. You can
+      interact it using E
+  - tutorialImage: {fileID: 8293026253538579910, guid: 9670c9be3aeb65140af403a056348d42, type: 3}
+    tutorialName: Combiner
+    tutorialDescription: Dont forget to stay hydrated by interact this using E, but
+      you need a least H 2 and O 1. You can see your bar in the right screen.
+  - tutorialImage: {fileID: 5413676945812881591, guid: b00d86ef20909204192b5a5d11cb6f28, type: 3}
+    tutorialName: Enemy
+    tutorialDescription: The enemy will spawned and you need to kill it before touching
+      you or your base. You can kill it by shoot with the right formula
+  - tutorialImage: {fileID: 1451361546513913597, guid: 6650cc55802b0984998788f835917d40, type: 3}
+    tutorialName: Weapon
+    tutorialDescription: You can change the formula of your wapon by click it
+  - tutorialImage: {fileID: 4555765647353051164, guid: 906af4c53a0adcb44a1214cb47315232, type: 3}
+    tutorialName: Weapon
+    tutorialDescription: You can see your current weapon formula in here. You can
+      shoot by click SPACE on your keyboard
+  - tutorialImage: {fileID: -6782939379008594277, guid: 369d994f541a9684fa12f3353d31a436, type: 3}
+    tutorialName: Dictionary
+    tutorialDescription: If you dont know the formula, you can check it in here.
+  - tutorialImage: {fileID: 6169095828216602985, guid: 1ad5e93071ad5d041b3c7c6000457951, type: 3}
+    tutorialName: Skill
+    tutorialDescription: Also, you can press Q to summon Shield. And press F to summon
+      Nuke. :D
+  - tutorialImage: {fileID: -8254932462476682504, guid: 80802cf9fa320fc419f77e97c1f72b20, type: 3}
+    tutorialName: GOODLUCK
+    tutorialDescription: Goodluck, I hope you like this game :D

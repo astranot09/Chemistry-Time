@@ -21,21 +21,56 @@ public class ChemistryWeapon : MonoBehaviour
     [SerializeField] private JenisBullet jenisBulletSekarang;
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private GameObject bulletPrefab;
+
+    [Header("Charged Time")]
+    [SerializeField] private float chargedTime = 1f;
+    [SerializeField] private GameObject chargedParticle;
+
+    private float currentChargeTimer = 0f;
+    private bool isCharging = false;
+
     void Start()
     {
         SetWeaponUI();
     }
-    
-    public void OnShoot(InputAction.CallbackContext ctx)
+
+    void Update()
     {
-        if (ctx.canceled)
+        if (isCharging)
         {
-            Debug.Log("Tes");
-            if (PlayerInventory.instance.BulletCost(jenisBulletSekarang))
-                SpawnBulletPrefab();
-            else
-                Debug.Log("ppp");
+            currentChargeTimer += Time.deltaTime;
         }
+    }
+
+    public void OnHoldCharge()
+    {
+        isCharging = true;
+        currentChargeTimer = 0f;
+        chargedParticle.SetActive(true);
+    }
+    public void OnChargeOff()
+    {
+        if (currentChargeTimer >= chargedTime)
+        {
+            if (PlayerInventory.instance.BulletCost(jenisBulletSekarang))
+            {
+                SpawnBulletPrefab();
+            }
+            else
+            {
+                Debug.Log("Ga cukup!");
+            }
+        }
+        else
+        {
+            Debug.Log("Charge belum cukup :(");
+        }
+
+        isCharging = false;
+        currentChargeTimer = 0f;
+
+        if (chargedParticle != null)
+            chargedParticle.SetActive(false);
     }
 
 

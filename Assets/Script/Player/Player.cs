@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     private void Death()
     {
         onDeath = true;
-        UIManager.instance.DeadPanelOpen();
+        LoseManager.instance.PlayerLose();
         BestScoreManager.instance.AddScore(GameManager.instance.ReturnPoint());
     }
 }

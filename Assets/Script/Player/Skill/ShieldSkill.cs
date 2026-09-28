@@ -20,17 +20,6 @@ public class ShieldSkill : MonoBehaviour
             currCooldown -= Time.deltaTime;
         }
     }
-    public void OnSkill(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            if(currCooldown > 0 || OnActived)
-                return;
-            SkillActivated();
-        }
-            
-    }
-
 
     public void OnReset()
     {
@@ -38,8 +27,10 @@ public class ShieldSkill : MonoBehaviour
         OnActived = false;
     }
 
-    private void SkillActivated()
+    public void SkillActivated()
     {
+        if (currCooldown > 0 || OnActived)
+            return;
         OnActived = true;
         var x = Instantiate(shield, transform.position, Quaternion.identity,transform);
         x.GetComponent<ShieldScript>().shield = this;

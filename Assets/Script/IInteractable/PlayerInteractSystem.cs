@@ -19,10 +19,8 @@ public class PlayerInteractSystem : MonoBehaviour
         }
     }
 
-    public void Interact(InputAction.CallbackContext ctx)
+    public void Interact()
     {
-        if (ctx.started) return;
-
         Debug.Log("Interact ditekan");
 
         hit = Physics2D.Raycast(
