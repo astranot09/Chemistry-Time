@@ -1,7 +1,11 @@
 # Chemistry Time
 
-<img width="320" height="180" alt="Timeline 1sdsd" src="https://github.com/user-attachments/assets/c1c3374f-c620-4d3e-b5e5-beb2422e1fd4" />
-<img width="320" height="180" alt="Timeline 12222" src="https://github.com/user-attachments/assets/62d261ef-0219-49c2-9d90-ff4af93f8de7" />
+<img width="320" height="180" alt="Main Menu" src="https://github.com/user-attachments/assets/c1c3374f-c620-4d3e-b5e5-beb2422e1fd4" />
+
+<p><strong>Video Gameplay</strong></p>
+<video src="https://github.com/user-attachments/assets/9c6a9f79-0d54-427b-8009-c0f4f2df3444" width="320" height="180" autoplay loop muted playsinline></video>
+
+
 
 
 
