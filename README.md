@@ -16,20 +16,23 @@ Game Engine = Unity 6000.0.60f1
 
 ## Key Features
 
-### Farming
-Press E to interact the crop. You will get 3 plant in inventory
+### Farming & Harvesting
+Press E to interact with agricultural crops to harvest raw organic resources into your inventory.
 
-### Extract
-Press E to interact the Ekstraktor. You will extract 1 plant into C 45, H 45, O 6, N 4.
+### Element Extraction
+Process harvested plants using the Extractor machine to yield raw elements ($C$, $H$, $O$, $N$).
 
-### Drink
-Press E to interact the Combiner. You will change H 2, O 1 into H20
+###  Compound Synthesis (Combiner)
+Combine raw elements at the Combiner station to craft required compounds (e.g., combining $H_2$ and $O$ to synthesize $H_2O$).
 
-### Attack
-Press the button to change the formula and Press space to summon fireball to attack the enemy. If the formula and the name is correct, the enemy will be died.
+### Formula Combat System
+Cycle through available chemical formulas and fire projectiles using Space. Correct formula matches deal fatal damage to targeted enemies!
 
-### Skill
-Press Q to summon Shield. And press F to summon Nuke.
+### Active Skills
+Deploy defensive Shields (Q) or trigger devastating elemental Nukes (F) when overwhelmed by enemy waves.
+
+### Hydration Survival
+Monitor your Water Bar constantly; running out of water or health triggers a game-over condition.
 
 ## Layer / Module Design
 
