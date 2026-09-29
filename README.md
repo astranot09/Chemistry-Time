@@ -1,5 +1,14 @@
 # Chemistry Time
 
+<img width="320" height="180" alt="Timeline 1sdsd" src="https://github.com/user-attachments/assets/c1c3374f-c620-4d3e-b5e5-beb2422e1fd4" />
+<img width="320" height="180" alt="Timeline 12222" src="https://github.com/user-attachments/assets/62d261ef-0219-49c2-9d90-ff4af93f8de7" />
+
+
+
+
+
+
+
 ## About Game
 Chemistry Time is a Educational game, where players must shoot targets containing the correct chemical symbol/formula (elements or compounds) matching the chemical name prompt shown on the screen.
 
