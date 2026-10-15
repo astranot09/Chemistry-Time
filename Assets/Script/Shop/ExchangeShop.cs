@@ -22,6 +22,7 @@ public class ExchangeShop : MonoBehaviour, IInteractable
         }
         else
         {
+            SoundManager.instance.PlaySFX(SoundManager.instance.failedInteract);
             Debug.Log("Ga ada Uang");
         }
     }

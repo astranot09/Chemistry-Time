@@ -19,7 +19,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip bgmMusic;
     public AudioClip gainPoint;
     public AudioClip damage;
-
+    public AudioClip drink;
+    public AudioClip processDone;
+    public AudioClip failedInteract;
     private void Start()
     {
         PlayBGM(bgmMusic);

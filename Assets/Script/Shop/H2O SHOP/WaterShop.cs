@@ -7,5 +7,6 @@ public class WaterShop : ExchangeShop
     {
         Debug.Log("Minum");
         waterBarManager.AddWater();
+        SoundManager.instance.PlaySFX(SoundManager.instance.drink);
     }
 }

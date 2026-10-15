@@ -54,5 +54,8 @@ TagManager:
   - name: Enemy
     uniqueID: 1352592069
     locked: 0
+  - name: Particle
+    uniqueID: 887810431
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using DG.Tweening;
+using TMPro;
+using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private TMP_Text enemyName;
@@ -16,14 +17,20 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D enemyCollider2D;
-    private ParticleSystem deathParticle;
+    [SerializeField] private ParticleSystem deathParticle;
 
     private bool onDead = false;
+    private SpriteRenderer[] spriteRenderers;
+
+    private void Awake()
+    {
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        deathParticle = GetComponent<ParticleSystem>();
+        //deathParticle = GetComponent<ParticleSystem>();
         enemyCollider2D = GetComponent<Collider2D>();
     }
 
@@ -67,7 +74,11 @@ public class Enemy : MonoBehaviour
         enemyCollider2D.enabled = false;
         GameManager.instance.AddPoint(1);
         StartCoroutine(deathTime());
-        deathParticle.Play();
+        deathParticle.Play(true);
+        foreach (var sr in spriteRenderers)
+        {
+            sr.DOFade(0f, deathTimeFeedback).SetUpdate(true);
+        }
     }
 
     IEnumerator deathTime()
@@ -75,6 +86,6 @@ public class Enemy : MonoBehaviour
         Time.timeScale = deathTimeScale;
         yield return new WaitForSecondsRealtime(deathTimeFeedback);
         Time.timeScale = 1f;
+        Destroy(gameObject);
     }
-
 }

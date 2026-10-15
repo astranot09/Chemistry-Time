@@ -39,6 +39,7 @@ public class ExtractorScript : MonoBehaviour, IInteractable
                 currTime = 0;
                 onProgress = false;
                 isReady = true;
+                SoundManager.instance.PlaySFX(SoundManager.instance.processDone);
                 AnimationDone();
             }
             UpdateProgressBar();
@@ -62,7 +63,12 @@ public class ExtractorScript : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (onProgress) return;
+        if (onProgress)
+        {
+            SoundManager.instance.PlaySFX(SoundManager.instance.failedInteract);
+            return;
+        }
+        
 
         if (isReady)
         {
@@ -71,7 +77,11 @@ public class ExtractorScript : MonoBehaviour, IInteractable
         }
         else
         {
-            if(PlayerInventory.instance.tumbuhan <=0) return;
+            if (PlayerInventory.instance.tumbuhan <= 0)
+            {
+                SoundManager.instance.PlaySFX(SoundManager.instance.failedInteract);
+                return;
+            }
             Do();
         }
     }

@@ -40,6 +40,7 @@ public class PlantScript : MonoBehaviour, IInteractable
                 currTime = progressTime;
                 MonologueManager.instance.PlayMonologue(monologueSO);
                 ReadAllParticleSystem(isReady);
+                SoundManager.instance.PlaySFX(SoundManager.instance.processDone);
             }
             //UpdateProgressBar();
         }
@@ -68,7 +69,12 @@ public class PlantScript : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (!isReady) return;
+        if (!isReady)
+        {
+            SoundManager.instance.PlaySFX(SoundManager.instance.failedInteract);
+            return;
+        }
+        
         PlayerInventory.instance.AddPlant(3);
         ResetTime();
     }
