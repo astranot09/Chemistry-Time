@@ -20,17 +20,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private ParticleSystem deathParticle;
 
     private bool onDead = false;
-    private SpriteRenderer[] spriteRenderers;
+    [SerializeField] private Transform enemySpriteParent;
 
     private void Awake()
     {
-        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        //spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //deathParticle = GetComponent<ParticleSystem>();
         enemyCollider2D = GetComponent<Collider2D>();
     }
 
@@ -70,22 +69,75 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         onDead = true;
-        Debug.Log("Death");
         enemyCollider2D.enabled = false;
         GameManager.instance.AddPoint(1);
-        StartCoroutine(deathTime());
-        deathParticle.Play(true);
-        foreach (var sr in spriteRenderers)
+
+        // Play particle jika ada (lepaskan parent-nya dulu kalau child dari enemy agar tidak mendadak hancur)
+        if (deathParticle != null)
         {
-            sr.DOFade(0f, deathTimeFeedback).SetUpdate(true);
+            deathParticle.transform.SetParent(null);
+            deathParticle.Play(true);
+            Destroy(deathParticle.gameObject, deathParticle.main.duration);
         }
+
+        StartCoroutine(DeathRoutine());
     }
 
-    IEnumerator deathTime()
+    private IEnumerator DeathRoutine()
     {
+        // 1. Hitstop / Freeze Frame Effect
         Time.timeScale = deathTimeScale;
         yield return new WaitForSecondsRealtime(deathTimeFeedback);
         Time.timeScale = 1f;
+
+        // 2. Disassemble / Meledakkan kepingan
+        CharacterDisassemble();
+
+        // 3. Hapus GameObject parent utama
         Destroy(gameObject);
+    }
+
+    private void CharacterDisassemble()
+    {
+        // Kumpulkan semua child transform
+        Transform[] allChildren = new Transform[enemySpriteParent.childCount];
+
+        for (int i = 0; i < enemySpriteParent.childCount; i++)
+        {
+            allChildren[i] = enemySpriteParent.GetChild(i);
+        }
+
+        foreach (var child in allChildren)
+        {
+            // Lepas parent agar tidak hancur saat parent-nya di-Destroy
+            child.SetParent(null);
+
+            // Tambahkan Rigidbody2D jika belum ada
+            Rigidbody2D childRb = child.GetComponent<Rigidbody2D>();
+            if (childRb == null)
+            {
+                childRb = child.gameObject.AddComponent<Rigidbody2D>();
+            }
+
+            // Atur gravity scale agar kepingan jatuh/melayang pas
+            childRb.gravityScale = 1f;
+
+            // Beri gaya ledakan acak
+            Vector2 randomDirection = Random.insideUnitCircle.normalized;
+            float explosionForce = Random.Range(5f, 10f);
+
+            childRb.AddForce(randomDirection * explosionForce, ForceMode2D.Impulse);
+            childRb.AddTorque(Random.Range(-5f, 5f), ForceMode2D.Impulse);
+
+            // Fade out kepingannya perlahan sebelum hancur (misal fade dalam 2.5 detik)
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.DOFade(0f, 2.5f);
+            }
+
+            // Hapus kepingan dari memory setelah 3 detik
+            Destroy(child.gameObject, 3f);
+        }
     }
 }

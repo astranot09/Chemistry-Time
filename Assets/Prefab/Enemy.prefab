@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9aae1f6f67bf05e41a993e3d6d0093e2, type: 2}
+  m_sharedMaterial: {fileID: -1301790630105707704, guid: 9aae1f6f67bf05e41a993e3d6d0093e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -347,9 +347,10 @@ MonoBehaviour:
   health: 1
   jenisEnemy: 0
   deathTimeScale: 0.1
-  deathTimeFeedback: 0.3
+  deathTimeFeedback: 0.1
   moveSpeed: 1
   deathParticle: {fileID: 962419431935797577}
+  enemySpriteParent: {fileID: 2140135200846084330}
 --- !u!50 &376882499185722464
 Rigidbody2D:
   serializedVersion: 5
