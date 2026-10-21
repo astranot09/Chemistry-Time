@@ -1,12 +1,12 @@
 # Chemistry Time
 
-<img width="320" height="180" alt="Main Menu" src="https://github.com/user-attachments/assets/c1c3374f-c620-4d3e-b5e5-beb2422e1fd4" />
+<img width="320" height="180" alt="Timeline 1ss (1)" src="https://github.com/user-attachments/assets/0ab7d215-31ad-40e7-8a0b-640bfe71f33b" />
 
-<p><strong>Video Gameplay</strong></p>
-<video src="https://github.com/user-attachments/assets/9c6a9f79-0d54-427b-8009-c0f4f2df3444" width="320" height="180" autoplay loop muted playsinline></video>
+<img width="320" height="180" alt="Chem2" src="https://github.com/user-attachments/assets/f02ca63e-db0e-4003-995f-4ecdf1e3c8ce" />
 
+<img width="320" height="180" alt="chem3 (1)" src="https://github.com/user-attachments/assets/e10b6074-8597-4f95-99f9-b8f053fbfd97" />
 
-
+<img width="320" height="180" alt="chem4 (1)" src="https://github.com/user-attachments/assets/8a2e9174-3619-4f2b-938c-b2479d6885c5" />
 
 
 
@@ -25,6 +25,7 @@ Game Engine = Unity 6000.0.60f1
 - Animation Character, Animation UI
 - Create Game Logic
 - Create Tutorial Logic
+- Polishing
 - etc
 
 ## Key Features
